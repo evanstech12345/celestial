@@ -1,0 +1,23 @@
+{
+  "name": "celesial",
+  "version": "1.0.0",
+  "description": "Space news site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanstech12345/Celesial.git"
+  },
+  "author": "Evan, Avichi, Vitamin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanstech12345/Celesial/issues"
+  },
+  "homepage": "https://github.com/evanstech12345/Celesial#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
