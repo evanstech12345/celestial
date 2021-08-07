@@ -6,7 +6,7 @@ const dotenv = require('dotenv')
 
 app.set('view-engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.json())
 dotenv.config();
 
 //connect to db
@@ -22,6 +22,6 @@ const authRoute = require('./routes/auth')
 app.use('/api/user', authRoute)
 app.use('/api/login', authRoute)
 
-app.use(express.json())
+
 
 app.listen(3000, console.log('listening on port 3000'))

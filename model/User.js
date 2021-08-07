@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+// var bodyParser = require('body-parser')
 const userSchema = new mongoose.Schema({
     name: {
         type: String,

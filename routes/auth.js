@@ -1,6 +1,6 @@
-const router = require('express').Router()
 const User = require('../model/User')
-
+const router = require('express').Router()
+// var bodyParser = require('body-parser')
 
 
 router.post('/register', async (req, res) => {
