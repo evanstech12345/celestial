@@ -84,12 +84,12 @@ a {
 #060033  --very dark blue*/
 .buttonBordered {
    border-radius: 100px;
-   padding: 0.5rem 4.5rem;
+   padding: 0.4rem 3.6rem;
    text-transform: uppercase;
    border: 3px solid #1600a3;
    background-color: #ffe119;
    font-family: "Baumans", cursive;
-   font-size: 1.7rem;
+   font-size: 1.6rem;
 }
 .loginSection {
    display: flex;
@@ -127,6 +127,11 @@ a {
    display: block;
    color: #1600a3;
 }
+.aboutSection__text {
+   font-size: 2rem;
+   display: inline-block;
+   font-family: "Share Tech", sans-serif;
+}
 .loginSection__textbox {
    margin-bottom: 2rem;
 }
@@ -146,12 +151,16 @@ a {
    font-family: "Share Tech", sans-serif;
    display: inline-block;
 }
+.aboutSection__headerButton {
+   margin-left: 5rem;
+}
+
 @media only screen and (max-width: 75em) {
    html {
       font-size: 50%;
    }
 }
-@media only screen and (max-width: 40.625em) {
+@media only screen and (max-width: 43.75em) {
    body {
       height: 50vw;
    }
