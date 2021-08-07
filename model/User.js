@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 // var bodyParser = require('body-parser')
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,6 +17,7 @@ const userSchema = new mongoose.Schema({
         max: 1024, 
     }
 })
+
 
 
 module.exports = mongoose.model('User', userSchema)
