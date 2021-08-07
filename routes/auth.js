@@ -41,8 +41,21 @@ router.post('/register', async (req, res) => {
     }
 })
 
+//login
 router.post('/login', (req, res) => {
-    res.send('Login')
+    const { error } = loginValidation(req.body);
+    if(error) return res.status(400).send('Email, name, or password does not exist')
+    const emailExist = User.findOne({
+        email: req.body.email
+    })
+    if(!nameValid) return res.status(400).send('Email, name, or password does not exist')
+    const nameValid = User.findOne({
+        name: req.body.name
+    })
+    if(!passwordValid) return res.status(400).send('Email, name, or password does not exist')
+    const passwordValid = User.findOne({
+        password: hashPassword
+    })
 })
 
 
