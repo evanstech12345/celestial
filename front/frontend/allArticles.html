@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Celestial</title>
+
+      <!-- GOOGLE FONTS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Baumans&family=Share+Tech&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="login.css" />
+   </head>
+   <body>
+      <div class="container">
+         <section class="navbar">
+            <img src="#" class="logo" />
+
+            <div class="navbar__menu">
+               <button class="navbar__toggle" onClick="showOrHide()" onload="check()"></button>
+
+               <ul class="navbar__navList">
+                  <a class="navbar__navListItem" href=""><li>sign up</li></a>
+                  <a class="navbar__navListItem" href=""><li>about us</li></a>
+                  <a class="navbar__navListItem" href=""><li>space news</li></a>
+               </ul>
+            </div>
+         </section>
+         <section class="loginSection">
+            <img src="rocket.png" alt="" class="loginSection__img" />
+            <div class="loginSection__mainDiv articleSection__titleDiv">
+               <h1 class="loginSection__title">
+                  <span>View all the</span>
+                  latest
+                  <span>and the greatest</span>
+                  space articles below
+               </h1>
+            </div>
+            <div class="loginSection__mainDiv articleSection__subDiv">
+               <h1 class="loginSection__title articleSection__subHead">all space articles below</h1>
+            </div>
+         </section>
+         <section class="articlesSection">
+            <!-- TEST ARTICLES -->
+            <div class="card">
+               <!-- image from backend in the src -->
+               <img class="card__image" src="rocket.png" alt="" />
+               <div class="card__content">
+                  <h3 class="card__contentHeading">HEADING FROM BACKEND</h3>
+                  <h5 class="card__contentText">
+                     CONTENT IN SHORT OF THE ARTICLE Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Odio, deserunt. Modi obcaecati, commodi hic est ratione ...
+                  </h5>
+                  <a href="">
+                     <button class="buttonBordered">read more</button>
+                  </a>
+               </div>
+            </div>
+            <div class="card">
+               <!-- image from backend in the src -->
+               <img class="card__image" src="rocket.png" alt="" />
+               <div class="card__content">
+                  <h3 class="card__contentHeading">HEADING FROM BACKEND</h3>
+                  <h5 class="card__contentText">
+                     CONTENT IN SHORT OF THE ARTICLE Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Odio, deserunt. Modi obcaecati, commodi hic est ratione ...
+                  </h5>
+                  <a href="">
+                     <button class="buttonBordered">read more</button>
+                  </a>
+               </div>
+            </div>
+            <div class="card">
+               <!-- image from backend in the src -->
+               <img class="card__image" src="rocket.png" alt="" />
+               <div class="card__content">
+                  <h3 class="card__contentHeading">HEADING FROM BACKEND</h3>
+                  <h5 class="card__contentText">
+                     CONTENT IN SHORT OF THE ARTICLE Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Odio, deserunt. Modi obcaecati, commodi hic est ratione ...
+                  </h5>
+                  <a href="">
+                     <button class="buttonBordered">read more</button>
+                  </a>
+               </div>
+            </div>
+         </section>
+      </div>
+   </body>
+   <script>
+      var show = false;
+
+      function showOrHide() {
+         show = !show;
+         if (show == true) {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "flex";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "column";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "4rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "0.65rem";
+            document.getElementsByClassName("logo")[0].style.alignSelf = "flex-start";
+         } else {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "none";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "row";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "-1rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "0";
+         }
+      }
+
+      var button = document.getElementsByClassName("navbar__toggle")[0];
+      button.onload = function () {
+         console.log("button onload");
+      };
+
+      function myFunction() {
+         alert("yu");
+      }
+      button.onLoad = function () {
+         alert(button.style.display);
+         if (button.style.display === "none") {
+            alert("op");
+         }
+      };
+   </script>
+</html>

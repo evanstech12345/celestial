@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Celestial</title>
+
+      <!-- GOOGLE FONTS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Baumans&family=Share+Tech&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="login.css" />
+   </head>
+   <body>
+      <div class="container">
+         <section class="navbar">
+            <img src="#" class="logo" />
+
+            <div class="navbar__menu">
+               <button class="navbar__toggle" onClick="showOrHide()"></button>
+
+               <ul class="navbar__navList">
+                  <a class="navbar__navListItem" href=""><li>sign up</li></a>
+                  <a class="navbar__navListItem" href=""><li>space news</li></a>
+                  <a href="">
+                     <button class="buttonBordered aboutSection__headerButton">login</button>
+                  </a>
+               </ul>
+            </div>
+         </section>
+         <section class="loginSection">
+            <img src="rocket.png" alt="" class="loginSection__img" />
+            <div class="loginSection__mainDiv">
+               <h1 class="loginSection__title">ABOUT THE SPACE CREW</h1>
+               <h3 class="aboutSection__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam a placeat
+                  incidunt perspiciatis, expedita laudantium, odit aliquam earum maiores ipsa dolore
+                  eum, ducimus voluptatum quo blanditiis rem voluptate? Accusantium. Tempora nostrum
+                  rerum, tempore maxime officiis minus. Enim at doloribus nam! Omnis exercitationem
+                  delectus unde et eligendi, sapiente officiis earum doloribus aliquam consequatur
+                  voluptatem quisquam cumque maxime, sit, totam dolor?
+               </h3>
+            </div>
+         </section>
+      </div>
+   </body>
+   <script>
+      var show = false;
+      function showOrHide() {
+         show = !show;
+         if (show == true) {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "flex";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "column";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "4rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "0.65rem";
+            document.getElementsByClassName("logo")[0].style.alignSelf = "flex-start";
+         } else {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "none";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "row";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "-1rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "0";
+         }
+      }
+
+      var button = document.getElementsByClassName("navbar__toggle")[0];
+   </script>
+</html>
