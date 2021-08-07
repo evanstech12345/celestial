@@ -1,10 +1,11 @@
 @charset "UTF-8";
-section {
-  background-color: #ffffff;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
 body {
-  font-style: normal;
+  font-family: 'Share Tech', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #232323;
@@ -951,4 +952,24 @@ blockquote {
   -moz-border-radius:15px;
   border-radius:15px;
   background:#817339;
+}
+.column-left {
+  float: left;
+  width: 33.333%;
+}
+
+.column-right {
+  float: right;
+  width: 33.333%;
+}
+
+.column-center {
+  display: inline-block;
+  width: 33.333%;
+}
+u{
+  color:#1600A3;
+}
+.mbr-fonts-style{
+  font-family: 'Share Tech', sans-serif;
 }
