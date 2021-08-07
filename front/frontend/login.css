@@ -1,0 +1,304 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+
+html {
+   box-sizing: border-box;
+   font-size: 62.5%;
+}
+
+body {
+   font-family: "Baumans", cursive;
+   color: black;
+   font-weight: 400;
+   line-height: 1.6;
+   background-image: url(blob.svg);
+   background-repeat: no-repeat;
+   height: 35vw;
+}
+a {
+   text-decoration: none;
+   color: black;
+}
+.container {
+   display: grid;
+   grid-template-columns: 80%;
+   justify-content: center;
+}
+
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 2rem;
+   align-items: center;
+}
+.navbar__toggle {
+   width: 4rem;
+   height: 0.4rem;
+   border: none;
+   border-radius: 0;
+   background-color: #1600a3;
+   display: none;
+}
+.navbar__toggle::before {
+   content: "";
+   display: block;
+   width: 4rem;
+   height: 0.4rem;
+   margin-top: 1.2rem;
+   background-color: #1600a3;
+}
+.navbar__toggle::after {
+   content: "";
+   display: block;
+   width: 4rem;
+   height: 0.4rem;
+   margin-top: 0.8rem;
+   background-color: #1600a3;
+}
+.navbar__navList {
+   display: flex;
+   margin-left: auto;
+   align-items: center;
+}
+
+.navbar__navListItem {
+   list-style: none;
+   text-decoration: none;
+   font-size: 1.5rem;
+   text-transform: uppercase;
+}
+.navbar__navListItem:hover {
+   color: #1600a3;
+}
+.navbar__navListItem:not(:first-of-type) {
+   margin-left: 5rem;
+}
+
+/* #FFE119 --yellow
+#1600A3 --dark blue
+#060033  --very dark blue*/
+.buttonBordered {
+   border-radius: 100px;
+   padding: 0.4rem 3.6rem;
+   text-transform: uppercase;
+   border: 3px solid #1600a3;
+   background-color: #ffe119;
+   font-family: "Baumans", cursive;
+   font-size: 1.6rem;
+}
+.loginSection {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-top: 10rem;
+}
+.loginSection__img {
+   width: 45%;
+   margin-left: -4%;
+}
+.loginSection__mainDiv {
+   width: 40vw;
+}
+
+.loginSection__title {
+   font-size: 5rem;
+   width: 100%;
+   line-height: 1.3;
+   display: inline-block;
+   text-transform: uppercase;
+   color: #1600a3;
+   margin-bottom: 5rem;
+}
+.loginSection__title span {
+   color: black;
+}
+.loginSection__button {
+   padding: 0.7rem 6.75rem;
+   font-size: 2rem;
+   margin-top: 2rem;
+   display: block;
+}
+.loginSection__textboxHeadings {
+   font-size: 2rem;
+   display: inline-block;
+   text-transform: uppercase;
+   display: block;
+   color: #1600a3;
+}
+.aboutSection__text {
+   font-size: 2rem;
+   display: inline-block;
+   font-family: "Share Tech", sans-serif;
+}
+.loginSection__textbox {
+   margin-bottom: 2rem;
+}
+
+.loginSection__textbox {
+   display: block;
+   border: 5px solid #1600a3;
+   border-radius: 15px;
+   font-size: 2rem;
+   padding: 1rem 5rem;
+   width: 40rem;
+}
+
+.loginSection__checkboxText {
+   color: #1600a3;
+   font-size: 2rem;
+   font-family: "Share Tech", sans-serif;
+   display: inline-block;
+}
+.aboutSection__headerButton {
+   margin-left: 5rem;
+}
+.articlesSection {
+   margin-top: 20rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-auto-rows: 65rem;
+   column-gap: 5rem;
+   row-gap: 10rem;
+}
+.card {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   border: 1rem solid #1600a3;
+   border-radius: 15px;
+}
+.card__image {
+   height: 40%;
+   display: block;
+}
+.card__content {
+   background-color: #1600a3;
+   border-radius: 15px;
+   padding: 3rem;
+   text-align: center;
+   display: block;
+   width: 90%;
+}
+.card__contentHeading {
+   color: white;
+   text-transform: uppercase;
+   font-size: 2.5rem;
+}
+.card__contentText {
+   color: white;
+   font-family: "Share Tech", sans serif;
+   text-transform: lowercase;
+   font-size: 1.7rem;
+   margin-top: 2rem;
+   margin-bottom: 4rem;
+}
+.articleSection__subDiv {
+   display: none;
+}
+
+@media only screen and (max-width: 75em) {
+   html {
+      font-size: 50%;
+   }
+}
+@media only screen and (max-width: 43.75em) {
+   body {
+      height: 50vw;
+   }
+   .loginSection {
+      flex-direction: column;
+      justify-content: center;
+   }
+   .loginSection__mainDiv {
+      width: 80%;
+      margin-top: 5rem;
+   }
+   .loginSection__img {
+      align-self: flex-start;
+      margin-left: 0;
+      width: 50%;
+   }
+   .loginSection__textbox {
+      border: 4px solid #1600a3;
+   }
+   .navbar__navList {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: flex-end;
+      display: none;
+   }
+   .navbar__navListItem:not(:first-of-type) {
+      margin-left: 0;
+   }
+   .navbar__menu {
+      display: flex;
+   }
+   .navbar__navListItem {
+      margin-top: 2rem;
+      font-size: 2rem;
+   }
+   .navbar__toggle {
+      display: inline-block;
+      margin-top: -1rem;
+      margin-left: auto;
+   }
+   .logo {
+      margin-top: 1rem;
+   }
+   .articlesSection {
+      margin-top: 0;
+   }
+   .aboutSection__headerButton {
+      margin-top: 2rem;
+   }
+   .articleSection__titleDiv {
+      display: none;
+   }
+   .articleSection__subDiv {
+      display: inline-block;
+      margin-top: 20rem;
+      text-align: center;
+   }
+}
+@media only screen and (max-width: 31.25em) {
+   html {
+      font-size: 45%;
+   }
+}
+
+@media only screen and (max-width: 25em) {
+   html {
+      font-size: 40%;
+   }
+   .loginSection {
+      align-items: flex-start;
+   }
+   .loginSection__mainDiv {
+      width: 100%;
+      margin-top: 5rem;
+   }
+   .loginSection__checkboxDiv {
+      display: flex;
+      align-items: center;
+   }
+   .loginSection__checkboxText {
+      margin-left: 1rem;
+      align-self: flex-end;
+   }
+   .loginSection__img {
+      margin-left: -10%;
+   }
+   .articleSection__subDiv {
+      margin-top: 10rem;
+   }
+   .articlesSection {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   }
+}
