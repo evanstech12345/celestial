@@ -1,6 +1,7 @@
 const User = require('../model/User')
 const Joi = require('@hapi/joi');
 const router = require('express').Router()
+const bcrypt = require('bcryptjs')
 // var bodyParser = require('body-parser')
 const {registerValidation, loginValidation} = require('../validation')
 
@@ -9,6 +10,7 @@ router.post('/register', async (req, res) => {
 
     const { error } = registerValidation(req.body);
     if(error) return res.status(400)
+
 
     //Check if the user is already in the db
     const emailExist = await User.findOne({
@@ -19,6 +21,11 @@ router.post('/register', async (req, res) => {
         name: req.body.name
     })
     if(nameExist) return res.status(400).send('name already exists')
+
+    //hash the password
+    const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(req.body.password, salt)
+
 
     //create a new user
     const user = new User({
