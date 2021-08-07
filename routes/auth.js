@@ -42,20 +42,22 @@ router.post('/register', async (req, res) => {
 })
 
 //login
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const { error } = loginValidation(req.body);
-    if(error) return res.status(400).send('Email, name, or password does not exist')
-    const emailExist = User.findOne({
-        email: req.body.email
-    })
-    if(!nameValid) return res.status(400).send('Email, name, or password does not exist')
+    if(error) return res.status(400).send(error)
+
+    const emailExist = await User.findOne({ email: req.body.email })
+    if(!emailExist) return res.status(400).send('Email is not found')
+    //if password and name is correct
+    if(!user) return res.status(400).send('name is not found')
     const nameValid = User.findOne({
         name: req.body.name
     })
-    if(!passwordValid) return res.status(400).send('Email, name, or password does not exist')
-    const passwordValid = User.findOne({
-        password: hashPassword
-    })
+    const validPass = await bcrypt.compare(hashPassword, user.password)
+    if(!validPass) return res.status(400).send('password is not found')
+
+    res.send('logged In')
+
 })
 
 
