@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
 app.set('view-engine', 'ejs')
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/front/public')));
+app.use(express.static(path.join(__dirname, '/front/public/images')));
 app.use(express.json())
 dotenv.config();
 
@@ -18,9 +19,18 @@ console.log('db is connected')
 //import routes
 const authRoute = require('./routes/auth')
 
+//get routes
+app.get('/register', (req, res) => {
+    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
+})
+app.get('/login', (req, res) => {
+    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/login.ejs')
+})
+
 //routes middleware
 app.use('/api/user', authRoute)
 app.use('/api/login', authRoute)
+app.use('/api/register', authRoute)
 
 
 
