@@ -2,11 +2,6 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 // var bodyParser = require('body-parser')
 const userSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        max: 20
-    },
     email: {
         type: String,
     },

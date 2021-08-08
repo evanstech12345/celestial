@@ -19,13 +19,19 @@ console.log('db is connected')
 //import routes
 const authRoute = require('./routes/auth')
 
-//get routes
-// app.get('/register', (req, res) => {
-//     res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
-// })
-// app.get('/login', (req, res) => {
-//     res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/login.ejs')
-// })
+// get routes
+app.get('/register', (req, res) => {
+    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
+})
+app.get('/login', (req, res) => {
+    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/login.ejs')
+})
+app.get('/', (req, res) => {
+    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/index.ejs")
+})
+app.get('/about', (req, res) => {
+    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/aboutUs.ejs")
+})
 
 //routes middleware
 app.use('/api/user', authRoute)
