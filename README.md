@@ -1,2 +1,2 @@
 # celestial
-A space news website 
+A space Image website 
