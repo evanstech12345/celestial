@@ -7,7 +7,9 @@ const axios = require('axios')
 // var bodyParser = require('body-parser')
 const {registerValidation, loginValidation} = require('../validation')
 
-
+router.get('/register', (req, res) => {
+    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
+})
 router.post('/register', async (req, res) => {
 
     const { error } = registerValidation(req.body);
@@ -40,6 +42,7 @@ router.post('/register', async (req, res) => {
     } catch(err) {
         res.status(400).send(err)
     }
+    console.log(user)
 })
 
 //login
