@@ -8,6 +8,7 @@ app.set('view-engine', 'ejs')
 app.use(express.static(path.join(__dirname, '/front/public')));
 app.use(express.static(path.join(__dirname, '/front/public/images')));
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 dotenv.config();
 
 //connect to db
@@ -32,11 +33,14 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/aboutUs.ejs")
 })
+app.get('/articles', (req, res) => {
+    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/articles.ejs")
+})
 
 //routes middleware
 app.use('/api/user', authRoute)
 app.use('/api/login', authRoute)
-app.use('/api/register', authRoute)
+
 
 
 

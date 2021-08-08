@@ -66,13 +66,7 @@ router.post('/login', async (req, res) => {
 
 })
 
-router.get('/api/articles', async(req, res) => {
-    try {
-        const newsApi = await axios.get()
-    } catch (error) {
-        
-    }
-} )
+
 
 
 
