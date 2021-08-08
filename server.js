@@ -23,7 +23,7 @@ const axios = require('axios')
 // )
 
 app.set('view engine', 'ejs')
-// app.set('views', 'view')
+
 app.use(express.static(path.join(__dirname, '/front/public')));
 app.use(express.static(path.join(__dirname, '/front/public/images')));
 app.use(express.json())
@@ -55,7 +55,7 @@ const {registerValidation, loginValidation} = require('./validation');
 
 app.get('/register', (req, res) => {
 
-res.render(__dirname + "/front/view/signup")
+res.render(__dirname + "front/frontend/signup.ejs")
 })
 app.post('/register', async (req, res) => {
 
@@ -86,7 +86,6 @@ app.post('/register', async (req, res) => {
     try{
         const savedUser = await user.save()
         res.send(savedUser)
-        res.redirect('/login')
     } catch(err) {
         res.status(400).send(err)
     }
@@ -94,7 +93,7 @@ app.post('/register', async (req, res) => {
 
 //login
 app.get('/login', (req, res) => {
-    res.render(__dirname + "/front/view/login")
+    res.render(__dirname + "front/frontend/login.ejs")
 })
 app.post('/login', async (req, res) => {
     const { error } = loginValidation(req.body);
@@ -119,13 +118,10 @@ app.post('/login', async (req, res) => {
     console.log('logged in')
 })
 app.get('/', (req, res) => {
-    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/index.ejs")
+    res.render(__dirname + "front/frontend/frontPage")
 })
 app.get('/about', (req, res) => {
-    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/aboutUs.ejs")
-})
-app.get('/articles', (req, res) => {
-    res.render("/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/articles.ejs")
+    res.render(__dirname + "front/frontend/aboutUs")
 })
 
 // //routes middleware
