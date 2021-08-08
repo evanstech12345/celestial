@@ -5,12 +5,13 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const User = require('./model/User')
 const Joi = require('@hapi/joi');
-const router = require('express').Router()
+// const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const axios = require('axios')
 
-app.set('view-engine', 'ejs')
+app.set('view engine', 'ejs')
+// app.set('views', 'view')
 app.use(express.static(path.join(__dirname, '/front/public')));
 app.use(express.static(path.join(__dirname, '/front/public/images')));
 app.use(express.json())
@@ -24,7 +25,7 @@ console.log('db is connected')
 
 
 //import routes
-const authRoute = require('./routes/auth')
+// const authRoute = require('./routes/auth')
 
 // get routes
 
@@ -32,7 +33,8 @@ const authRoute = require('./routes/auth')
 const {registerValidation, loginValidation} = require('./validation')
 
 app.get('/register', (req, res) => {
-    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
+
+res.render(__dirname + "/front/view/signup")
 })
 app.post('/register', async (req, res) => {
 
@@ -45,10 +47,10 @@ app.post('/register', async (req, res) => {
         email: req.body.email
     })
     if(emailExist) return res.status(400).send('email already exists')
-    const nameExist = await User.findOne({
-        name: req.body.name
-    })
-    if(nameExist) return res.status(400).send('name already exists')
+    // const nameExist = await User.findOne({
+        // name: req.body.name
+    // })
+    // if(nameExist) return res.status(400).send('name already exists')
 
     //hash the password
     const salt = await bcrypt.genSalt(10);
@@ -66,10 +68,12 @@ app.post('/register', async (req, res) => {
     } catch(err) {
         res.status(400).send(err)
     }
-    console.log(user)
 })
 
 //login
+app.get('/login', (req, res) => {
+    res.render(__dirname + "/front/view/login")
+})
 app.post('/login', async (req, res) => {
     const { error } = loginValidation(req.body);
     if(error) return res.status(400).send(error.details[0].message)

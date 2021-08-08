@@ -8,7 +8,7 @@ const axios = require('axios')
 const {registerValidation, loginValidation} = require('../validation')
 
 router.get('/register', (req, res) => {
-    res.render('/opt/homebrew/Caskroom/miniforge/base/envs/celesial/Celesial/front/view/signup.ejs')
+    res.render(__dirname, 'front/view/signup.ejs')
 })
 router.post('/register', async (req, res) => {
 
