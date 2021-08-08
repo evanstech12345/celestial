@@ -232,6 +232,33 @@ a {
    margin-right: 15rem;
 }
 
+.singleArticle {
+   margin-top: 20rem;
+   text-align: center;
+}
+.singleArticle__heading {
+   background-color: #1600a3;
+   color: white;
+   font-size: 4rem;
+   margin-bottom: 5rem;
+   text-transform: uppercase;
+}
+.singleArticle__text {
+   color: black;
+   font-size: 2rem;
+   font-family: "Share Tech", sans-serif;
+   margin-top: 5rem;
+   text-align: left;
+}
+.singleArticle__link {
+   text-decoration: none;
+   color: #1600a3;
+   font-size: 2rem;
+}
+.singleArticle__headerButton {
+   margin-top: 3rem;
+}
+
 @media only screen and (max-width: 75em) {
    html {
       font-size: 50%;
@@ -298,6 +325,9 @@ a {
    }
    .footer__list a:not(:last-of-type) {
       margin-right: 7rem;
+   }
+   .singleArticle {
+      margin-top: 5rem;
    }
 }
 @media only screen and (max-width: 31.25em) {
