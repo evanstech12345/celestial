@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Celestial</title>
+
+      <!-- GOOGLE FONTS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Baumans&family=Share+Tech&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="login.css" />
+   </head>
+   <body>
+      <div class="container">
+         <section class="navbar">
+            <img src="#" class="logo" />
+
+            <div class="navbar__menu">
+               <button class="navbar__toggle" onClick="showOrHide()"></button>
+
+               <ul class="navbar__navList">
+                  <a class="navbar__navListItem" href=""><li>sign up</li></a>
+                  <a class="navbar__navListItem" href=""><li>about us</li></a>
+                  <a href="">
+                     <button class="buttonBordered aboutSection__headerButton">login</button>
+                  </a>
+               </ul>
+            </div>
+         </section>
+         <section class="loginSection">
+            <img src="rocket.png" alt="" class="loginSection__img" />
+            <div class="loginSection__mainDiv">
+               <div class="loginSection__mainDiv articleSection__titleDiv">
+                  <h1 class="loginSection__title">
+                     <span>View all the</span>
+                     latest
+                     <span>and the greatest</span>
+                     space article below
+                  </h1>
+               </div>
+               <!-- <h3 class="aboutSection__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum numquam a placeat
+                  incidunt perspiciatis, expedita laudantium, odit aliquam earum maiores ipsa dolore
+                  eum, ducimus voluptatum quo blanditiis rem voluptate? Accusantium. Tempora nostrum
+                  rerum, tempore maxime officiis minus. Enim at doloribus nam! Omnis exercitationem
+                  delectus unde et eligendi, sapiente officiis earum doloribus aliquam consequatur
+                  voluptatem quisquam cumque maxime, sit, totam dolor?
+               </h3> -->
+            </div>
+         </section>
+         <section class="singleArticle">
+            <h2 class="singleArticle__heading">ARTICLE HEADING HERE</h2>
+            <h2 class="singleArticle__text">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci aliquid eos natus
+               eligendi ipsa ipsam mollitia fugit. Temporibus vitae consequuntur, quod quia,
+               suscipit commodi, ullam magni fugit praesentium sit alias? Voluptatem rerum nihil ad?
+               Dolorem, impedit cupiditate! Earum laboriosam repudiandae esse nisi nostrum animi
+               aperiam illum voluptas quas! Aliquam, tempore ipsum? Fugit qui dolores magnam commodi
+               iure architecto facilis quo! Illo voluptatum autem minima rem atque commodi, ab aut
+               tenetur voluptas animi expedita sed magnam quas porro! Odit, velit. Natus sed impedit
+               quisquam voluptas porro delectus cum aut adipisci necessitatibus! Dignissimos cum
+               dicta possimus explicabo expedita voluptatem vel quia? Et, consequatur beatae numquam
+               consectetur, inventore nulla blanditiis vitae ea minus ullam consequuntur in ex ab.
+               Dolor in rem temporibus ad.
+            </h2>
+            <a href="">
+               <button class="buttonBordered singleArticle__headerButton">View the Image</button>
+            </a>
+         </section>
+      </div>
+      <section class="footer">
+         <h3 class="footer__text">Pages to visit</h3>
+         <ul class="footer__list">
+            <a href=""><li class="footer__links">Space News</li></a>
+            <a href=""><li class="footer__links">home</li></a>
+            <a href=""><li class="footer__links">about us</li></a>
+         </ul>
+         <h3 class="footer__text">© Copyright 2021 Celestial</h3>
+      </section>
+   </body>
+   <script>
+      var show = false;
+      function showOrHide() {
+         show = !show;
+         if (show == true) {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "flex";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "column";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "4rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "0.65rem";
+            document.getElementsByClassName("logo")[0].style.alignSelf = "flex-start";
+         } else {
+            document.getElementsByClassName("navbar__navList")[0].style.display = "none";
+            document.getElementsByClassName("navbar__menu")[0].style.flexDirection = "row";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginTop = "-1rem";
+            document.getElementsByClassName("navbar__toggle")[0].style.marginBottom = "0";
+         }
+      }
+
+      var button = document.getElementsByClassName("navbar__toggle")[0];
+   </script>
+</html>
